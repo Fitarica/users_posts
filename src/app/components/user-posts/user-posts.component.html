@@ -1,0 +1,18 @@
+<div class="container">
+  <ng-container *ngFor="let post of userPosts; let i=index">
+    <ng-container *ngFor="let user of users; let j=index">
+      <div *ngIf="post.userId === user.id" class="mb-5">
+        <span class="username">Post pubblicato da {{user.name}} alias
+          <span class="alias">{{user.username}}</span>
+        </span>
+        <div style="padding: 5px">
+          <h5>{{post.title}}</h5>
+          <p>{{post.body}}</p>
+        </div>
+        <div class="btn-container">
+          <button class="btn">Close</button>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

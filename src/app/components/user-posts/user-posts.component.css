@@ -1,0 +1,32 @@
+.container{
+  max-height: 280px;
+  overflow-y: auto;
+  width: 250px;
+}
+
+.username {
+  font-size: 11px;
+  padding: 2px;
+}
+
+.alias{
+  color: red;
+  font-size: 11px;
+}
+
+.mb-5 {
+  padding-right: 10px;
+}
+
+h5{
+  font-size: 16px; 
+  font-weight: bold;
+  color: red;
+  margin: 15px 0px;
+}
+
+.btn{
+  background-color: red;
+  color: white;
+  font-size: 14px;
+}

@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <div class="text">
+        <p>Post Feed</p>
+      </div>
+      <ng-container *ngFor="let post of posts; let i= index">
+        <ng-container *ngFor="let user of users; let j= index">
+          <ul *ngIf="post.userId === user.id">
+            <li>
+              <div class="square-container">
+                <div class="square" type="button" [ngbPopover]="dialogComments" container="body"
+                  [placement]="'auto'">
+                  <div>{{getInitials(user.name)}}</div>
+                </div>
+              </div>
+              <div class="post-title">
+                <div>{{post.title}}</div>
+                <div class="post-body">
+                  <!-- <p>{{post.body}}</p> -->
+                  <span>published by: <span class="username">{{user.username}}</span></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ng-template #dialogComments>
+            <app-user-posts [userId]="user.id" [users]="users" [postId]="post.id"></app-user-posts>
+          </ng-template>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
